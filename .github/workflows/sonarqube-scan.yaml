@@ -23,9 +23,10 @@ jobs:
         ./sonar-scanner-5.0.1.3006-linux/bin/sonar-scanner -X \
            -Dsonar.projectKey=VollMed \
            -Dsonar.sources=. \
-           -Dsonar.host.url=http://localhost:9000 \
+           -Dsonar.host.url=$SONARQUBE_HOST \
            -Dsonar.login=$SONARQUBE_TOKEN
       env:
         SONARQUBE_TOKEN: ${{ secrets.SONARQUBE_TOKEN }}
+        SONARQUBE_HOST: ${{ secrets.SONARQUBE_HOST }}
 
 
